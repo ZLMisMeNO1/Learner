@@ -10,10 +10,8 @@ package cn.osbullshit.learner.java.service.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import cn.osbullshit.learner.java.dao.UserDao;
 import cn.osbullshit.learner.java.pojo.UserBean;
 import cn.osbullshit.learner.java.service.UserService;
@@ -30,7 +28,7 @@ import cn.osbullshit.learner.java.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 
-	@Resource
+	@Autowired
 	UserDao userDao;
 	
 	@Override
