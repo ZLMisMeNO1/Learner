@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
- <!-- 用户 -->
+ <!-- 用户数据库文件 -->
 <mapper namespace="cn.osbullshit.learner.java.dao.UserDao">
-	<!-- 用户登录 -->
+	<!-- 加载用户 -->
 	<select id="listAll" parameterType="cn.osbullshit.learner.java.pojo.UserBean"
 		resultType="cn.osbullshit.learner.java.pojo.UserBean">
 		select * from tb_learner_user
