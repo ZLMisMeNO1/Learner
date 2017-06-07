@@ -241,6 +241,7 @@
 			<artifactId>spring-websocket</artifactId>
 			<version>4.2.5.RELEASE</version>
 		</dependency>
+		
 		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
