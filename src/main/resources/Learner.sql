@@ -31,4 +31,6 @@ insert into tb_learner_qAndA(title,question,answer,isDelete)
 
 3、StringBuffer是线程安全的，而StringBuilder是非线程安全的。
 
-ps：线程安全会带来额外的系统开销，所以StringBuilder的效率比StringBuffer高。如果对系统中的线程是否安全很掌握，可用StringBuffer，在线程不安全处加上关键字Synchronize。",0)
+ps：线程安全会带来额外的系统开销，所以StringBuilder的效率比StringBuffer高。如果对系统中的线程是否安全很掌握，可用StringBuffer，在线程不安全处加上关键字Synchronize。",0);
+insert into tb_learner_qAndA(title,question,answer,isDelete)
+	values ("什么是认知？","认知是什么?","认知是一个过程",0)
