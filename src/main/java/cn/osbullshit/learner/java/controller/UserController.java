@@ -20,7 +20,7 @@ import cn.osbullshit.learner.java.exception.IllegalParamsException;
 import cn.osbullshit.learner.java.service.UserService;
 
 /** 
- * ClassName:UserController 
+ * ClassName:UserController 用户controller
  * Function: TODO ADD FUNCTION. 
  * Date:     2017年6月7日 下午2:17:39 
  * @author   baoqi.zhang 
