@@ -3,7 +3,7 @@
  * File Name:SerializeUtil.java 
  * Package Name:cn.osbullshit.learner.java.util 
  * Date:2017年6月7日下午2:40:13 
- * 
+ * 序列化工具
  */  
   
 package cn.osbullshit.learner.java.util;  
