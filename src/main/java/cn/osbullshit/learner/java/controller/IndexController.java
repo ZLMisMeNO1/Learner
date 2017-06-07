@@ -11,9 +11,10 @@ package cn.osbullshit.learner.java.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /** 
- * ClassName:IndexController 
+ * ClassName:IndexController 首页
  * Function: TODO ADD FUNCTION. 
  * Date:     2017年6月7日 下午1:06:54 
  * @author   baoqi.zhang 
@@ -26,9 +27,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
 
 	@RequestMapping("index")
-	@ResponseBody
-	public String index() {
-		return "Hello world";
+	public ModelAndView index() {
+		return new ModelAndView("index");
 	}
 }
  
