@@ -1,4 +1,4 @@
-/* 用户表*/
+/* 用户表 */
 create table tb_learner_user(
 	id varchar(30) primary key,
 	name varchar(255) not null,
