@@ -1,10 +1,10 @@
 /** 
- * Project Name:Learner 
+ * Project Name:Learner 输入参数不合法、空等异常
  * File Name:IllegalParamsException.java 
  * Package Name:cn.osbullshit.learner.java.exception 
  * Date:2017年6月7日下午2:28:51 
  * 
- * Controller层输入参数不合法、空等异常
+ * 
  */
 
 package cn.osbullshit.learner.java.exception;
