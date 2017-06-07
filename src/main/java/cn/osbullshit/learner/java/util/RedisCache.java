@@ -3,7 +3,7 @@
  * File Name:RedisCache.java 
  * Package Name:cn.osbullshit.learner.java.util 
  * Date:2017年6月7日下午2:41:31 
- * 
+ * redis缓存应用
  */
 
 package cn.osbullshit.learner.java.util;
