@@ -3,24 +3,34 @@ package cn.osbullshit.learner.java.pojo;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class QuestionAndAnswerBean implements Serializable{
+public class QuestionAndAnswerBean implements Serializable {
 
-	/**   
+	/**
 	 * @Fields serialVersionUID :
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private Integer id;
-	
+
 	private String userId;
-	
+
 	private String question;
-	
+
 	private String answer;
+
+	private String title;
 	
 	private Integer isDelete;
-	
+
 	private Timestamp update_time;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	public Integer getId() {
 		return id;
@@ -69,7 +79,5 @@ public class QuestionAndAnswerBean implements Serializable{
 	public void setUpdate_time(Timestamp update_time) {
 		this.update_time = update_time;
 	}
-	
-	
 
 }
