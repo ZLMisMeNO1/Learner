@@ -22,7 +22,15 @@ import cn.osbullshit.learner.java.pojo.UserBean;
  * @see       
  */
 public interface UserDao {
-	
+	/**
+	 * 
+	 * listAll:加载用户
+	 * 
+	 * @author baoqi.zhang 
+	 * @param user
+	 * @return 
+	 * @since JDK 1.7
+	 */
 	List<UserBean> listAll(UserBean user);
 }
  
