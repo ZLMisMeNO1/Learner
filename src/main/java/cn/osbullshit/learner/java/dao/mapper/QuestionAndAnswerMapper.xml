@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <!-- 试题以及答案 -->
+<mapper namespace="cn.osbullshit.learner.java.dao.QuestionAndAnswerDao">
+	<!-- 加载用户 -->
+	<select id="getQandA" parameterType="int"
+		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
+		select * from tb_learner_qAndA where id =  #{id}
+	</select>
+</mapper>
