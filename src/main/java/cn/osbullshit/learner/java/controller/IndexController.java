@@ -7,6 +7,11 @@
  */  
   
 package cn.osbullshit.learner.java.controller;  
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 /** 
  * ClassName:IndexController 
  * Function: TODO ADD FUNCTION. 
@@ -16,10 +21,14 @@ package cn.osbullshit.learner.java.controller;
  * @since    JDK 1.7 
  * @see       
  */
+@Controller
+@RequestMapping("java")
 public class IndexController {
 
-	public static void main(String[] args) {
-		
+	@RequestMapping("index")
+	@ResponseBody
+	public String index() {
+		return "Hello world";
 	}
 }
  

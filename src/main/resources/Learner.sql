@@ -1,9 +1,12 @@
-create table test(
+/* 用户表*/
+create table tb_learner_user(
 	id varchar(30) primary key,
-	age int ,
-	name varchar(255)
+	name varchar(255) not null,
+	openId varchar(255) not null
 );
-insert into test values('adfad',11,'bob');
-insert into test values('adsf',11,'波波');
+insert into tb_learner_user values ("a","a","a");
+insert into tb_learner_user values ("b","b","b");
+insert into tb_learner_user values ("c","c","c");
+insert into tb_learner_user values ("d","中文测试","中文测试");
 
-select * from test
+select * from tb_learner_user;

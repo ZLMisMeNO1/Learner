@@ -26,16 +26,16 @@
 	<!-- 注册SqlSessionFactory -->
 	<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dbcp"/>
-		<property name="mapperLocations" value="classpath:cn/os/bullshit/dao/mapper/*.xml"/>
+		<property name="mapperLocations" value="classpath:cn/osbullshit/learner/java/dao/mapper/*.xml"/>
 	</bean>
 	
 	<!-- 将com.sjzu,note.dao包下接口生成实现类 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="cn.os.bullshit.dao"/>
+		<property name="basePackage" value="cn.osbullshit.learner.java.dao"/>
 	</bean>
 	
 	<!-- 开启组件扫描 -->
-	<context:component-scan base-package="cn.os.bullshit"/>
+	<context:component-scan base-package="cn.osbullshit.learner"/>
 	
 	<!-- HandlerMapping -->
 	<mvc:annotation-driven>  
@@ -48,8 +48,8 @@
 	<aop:aspectj-autoproxy/>
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/server/**"/>
-			<bean class="cn.os.bullshit.interceptor.LoginInterceptor"/>
+			<mvc:mapping path="/**"/>
+			<bean class="cn.osbullshit.learner.java.interceptor.ApplicationInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
 </beans>
