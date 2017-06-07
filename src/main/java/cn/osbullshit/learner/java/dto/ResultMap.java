@@ -11,7 +11,7 @@ package cn.osbullshit.learner.java.dto;
 import java.io.Serializable;
 
 /** 
- * ClassName:ResultMap 
+ * ClassName:ResultMap 应用层返回格式定义
  * Function: TODO ADD FUNCTION. 
  * Date:     2017年6月7日 下午2:09:20 
  * @author   baoqi.zhang 
