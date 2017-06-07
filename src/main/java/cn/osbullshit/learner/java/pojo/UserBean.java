@@ -11,7 +11,7 @@ package cn.osbullshit.learner.java.pojo;
 import java.io.Serializable;
 
 /** 
- * ClassName:UserBean 
+ * ClassName:UserBean  用户表
  * Function: TODO ADD FUNCTION. 
  * Date:     2017年6月7日 下午1:59:54 
  * @author   baoqi.zhang 
