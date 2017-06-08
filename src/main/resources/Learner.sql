@@ -15,14 +15,15 @@ select * from tb_learner_user;
 
 /*试题以及答案*/
 create table tb_learner_qAndA (
-	id int auto_increment primary key,
+	id varchar(30) primary key,
 	userId varchar(30) ,
 	title varchar(255) not null,
 	question varchar(255) not null,
 	answer varchar(300) not null,
 	isDelete int not null,
 	update_time TIMESTAMP ,
-	language varchar(30) not null
+	language varchar(30) not null,
+	sortNum int not null
 );
 drop table tb_learner_qAndA;
 select * from  tb_learner_qAndA;
