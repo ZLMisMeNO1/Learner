@@ -6,11 +6,11 @@
  * 
  */  
   
-package cn.osbullshit.learner.java.dao;  
+package cn.osbullshit.learner.dao;  
 
 import java.util.List;
 
-import cn.osbullshit.learner.java.pojo.UserBean;
+import cn.osbullshit.learner.pojo.UserBean;
 
 /** 
  * ClassName:UserDao 

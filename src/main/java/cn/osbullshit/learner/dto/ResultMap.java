@@ -6,7 +6,7 @@
  * 
  */  
   
-package cn.osbullshit.learner.java.dto;  
+package cn.osbullshit.learner.dto;  
 
 import java.io.Serializable;
 

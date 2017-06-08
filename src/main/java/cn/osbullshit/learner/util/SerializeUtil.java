@@ -6,7 +6,7 @@
  * 序列化工具
  */  
   
-package cn.osbullshit.learner.java.util;  
+package cn.osbullshit.learner.util;  
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

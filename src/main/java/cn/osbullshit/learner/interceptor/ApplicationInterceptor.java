@@ -1,5 +1,5 @@
 
-package cn.osbullshit.learner.java.interceptor;
+package cn.osbullshit.learner.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

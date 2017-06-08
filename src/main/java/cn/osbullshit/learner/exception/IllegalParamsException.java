@@ -7,7 +7,7 @@
  * 
  */
 
-package cn.osbullshit.learner.java.exception;
+package cn.osbullshit.learner.exception;
 
 import org.apache.log4j.Logger;
 

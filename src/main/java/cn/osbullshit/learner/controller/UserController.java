@@ -6,7 +6,7 @@
  * 
  */  
   
-package cn.osbullshit.learner.java.controller;  
+package cn.osbullshit.learner.controller;  
 
 
 import org.apache.log4j.Logger;
@@ -15,9 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.osbullshit.learner.java.dto.ResultMap;
-import cn.osbullshit.learner.java.exception.IllegalParamsException;
-import cn.osbullshit.learner.java.service.UserService;
+import cn.osbullshit.learner.dto.ResultMap;
+import cn.osbullshit.learner.exception.IllegalParamsException;
+import cn.osbullshit.learner.service.UserService;
 
 /** 
  * ClassName:UserController 用户controller

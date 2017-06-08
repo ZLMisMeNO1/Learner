@@ -6,7 +6,7 @@
  * redis缓存应用
  */
 
-package cn.osbullshit.learner.java.util;
+package cn.osbullshit.learner.util;
 
 import java.io.IOException;
 import java.util.ResourceBundle;

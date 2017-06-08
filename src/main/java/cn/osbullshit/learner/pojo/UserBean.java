@@ -6,7 +6,7 @@
  * 
  */  
   
-package cn.osbullshit.learner.java.pojo;  
+package cn.osbullshit.learner.pojo;  
 
 import java.io.Serializable;
 

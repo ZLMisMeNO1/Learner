@@ -6,15 +6,16 @@
  * 
  */  
   
-package cn.osbullshit.learner.java.service.impl;  
+package cn.osbullshit.learner.service.impl;  
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import cn.osbullshit.learner.java.dao.UserDao;
-import cn.osbullshit.learner.java.pojo.UserBean;
-import cn.osbullshit.learner.java.service.UserService;
+
+import cn.osbullshit.learner.dao.UserDao;
+import cn.osbullshit.learner.pojo.UserBean;
+import cn.osbullshit.learner.service.UserService;
 
 /** 
  * ClassName:UserServiceImpl 

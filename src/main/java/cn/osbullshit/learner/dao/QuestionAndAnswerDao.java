@@ -1,9 +1,9 @@
-package cn.osbullshit.learner.java.dao;
+package cn.osbullshit.learner.dao;
 
 import java.util.List;
 import java.util.Map;
 
-import cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean;
+import cn.osbullshit.learner.pojo.QuestionAndAnswerBean;
 
 public interface QuestionAndAnswerDao {
 	/**
@@ -26,7 +26,7 @@ public interface QuestionAndAnswerDao {
 	 * @return 
 	 * @since JDK 1.7
 	 */
-	QuestionAndAnswerBean getQuestionAndAnswer(Integer id);
+	QuestionAndAnswerBean getQuestionAndAnswer(String id);
 	
 	/**
 	 * 
@@ -37,5 +37,5 @@ public interface QuestionAndAnswerDao {
 	 * @return 
 	 * @since JDK 1.7
 	 */
-	Integer getMaxId();
+	Integer getMaxNum(String language);
 }

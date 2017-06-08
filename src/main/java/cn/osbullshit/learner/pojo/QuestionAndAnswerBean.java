@@ -1,4 +1,4 @@
-package cn.osbullshit.learner.java.pojo;
+package cn.osbullshit.learner.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -10,7 +10,7 @@ public class QuestionAndAnswerBean implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
+	private String id;
 
 	private String userId;
 
@@ -26,6 +26,16 @@ public class QuestionAndAnswerBean implements Serializable {
 
 	private String language;
 	
+	private Integer sortNum;
+	
+	public Integer getSortNum() {
+		return sortNum;
+	}
+
+	public void setSortNum(Integer sortNum) {
+		this.sortNum = sortNum;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -34,11 +44,13 @@ public class QuestionAndAnswerBean implements Serializable {
 		this.title = title;
 	}
 
-	public Integer getId() {
+	
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

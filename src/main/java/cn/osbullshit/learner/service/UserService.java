@@ -6,11 +6,11 @@
  * 
  */
 
-package cn.osbullshit.learner.java.service;
+package cn.osbullshit.learner.service;
 
 import java.util.List;
 
-import cn.osbullshit.learner.java.pojo.UserBean;
+import cn.osbullshit.learner.pojo.UserBean;
 
 /**
  * ClassName:UserService Function: TODO ADD FUNCTION. Date: 2017年6月7日 下午2:08:21

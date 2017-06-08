@@ -7,19 +7,19 @@
 	<select id="listQuestionAndAnswers" parameterType="map"
 		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
 		
-		select * from tb_learner_qAndA where id between #{start} and #{end} and language = "java";
+		select * from tb_learner_qAndA where sortNum between #{start} and #{end} and language = #{language} order by  sortNum
 	
 	</select>
 	
 	<!-- 加载单个试题 -->
-	<select id="getQuestionAndAnswer" parameterType="int"
+	<select id="getQuestionAndAnswer" parameterType="string"
 		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
 		
 		select * from tb_learner_qAndA where id = #{id}
 	
 	</select>
 	
-	<select id="getMaxId" resultType="int">
-		select max(id) from tb_learner_qAndA
+	<select id="getMaxNum" parameterType="string" resultType="int">
+		select max(sortNum) from tb_learner_qAndA where language = #{language}
 	</select>
 </mapper>
