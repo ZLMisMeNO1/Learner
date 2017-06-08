@@ -3,9 +3,23 @@
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
  <!-- 试题以及答案 -->
 <mapper namespace="cn.osbullshit.learner.java.dao.QuestionAndAnswerDao">
-	<!-- 加载用户 -->
-	<select id="getQandA" parameterType="int"
+	<!-- 分页加载试题 -->
+	<select id="listQuestionAndAnswers" parameterType="map"
 		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
-		select * from tb_learner_qAndA where id =  #{id}
+		
+		select * from tb_learner_qAndA where id between #{start} and #{end} and language = "java";
+	
+	</select>
+	
+	<!-- 加载单个试题 -->
+	<select id="getQuestionAndAnswer" parameterType="int"
+		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
+		
+		select * from tb_learner_qAndA where id = #{id}
+	
+	</select>
+	
+	<select id="getMaxId" resultType="int">
+		select max(id) from tb_learner_qAndA
 	</select>
 </mapper>
