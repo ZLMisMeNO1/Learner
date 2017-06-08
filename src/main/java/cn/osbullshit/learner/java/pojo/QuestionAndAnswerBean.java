@@ -24,6 +24,8 @@ public class QuestionAndAnswerBean implements Serializable {
 
 	private Timestamp update_time;
 
+	private String language;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -78,6 +80,14 @@ public class QuestionAndAnswerBean implements Serializable {
 
 	public void setUpdate_time(Timestamp update_time) {
 		this.update_time = update_time;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 }
