@@ -1,18 +1,31 @@
 package cn.osbullshit.learner.java.service;
 
+import java.util.List;
+
 import cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean;
 
 public interface QuestionAndAnswerService {
 	
 	/**
 	 * 
-	 * @Title: getQuestionAndAnswer  获取试题 
-	 * @Description: 
-	 * @param: @param id 当id为空时，默认id = 1
-	 * @param: @return      
-	 * @return: QuestionAndAnswerBean      
-	 * @throws   
-	 * @author baoqi.zhang
+	 * listQuestionAndAnswers:分页加载试题
+	 * 
+	 * @author baoqi.zhang 
+	 * @param page
+	 * @param rows
+	 * @return 
+	 * @since JDK 1.7
 	 */
-	QuestionAndAnswerBean getQuestionAndAnswer(Integer id);
+	List<QuestionAndAnswerBean> listQuestionAndAnswers(int page,int rows);
+	
+	/**
+	 * 
+	 * getQuestionAndAnswer:加载单个试题
+	 * 
+	 * @author baoqi.zhang 
+	 * @param id
+	 * @return 
+	 * @since JDK 1.7
+	 */
+	QuestionAndAnswerBean getQuestionAndAnswer(Integer id) ;
 }
