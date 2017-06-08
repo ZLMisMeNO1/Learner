@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
  <!-- 试题以及答案 -->
-<mapper namespace="cn.osbullshit.learner.java.dao.QuestionAndAnswerDao">
+<mapper namespace="cn.osbullshit.learner.dao.QuestionAndAnswerDao">
 	<!-- 分页加载试题 -->
 	<select id="listQuestionAndAnswers" parameterType="map"
-		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
+		resultType="cn.osbullshit.learner.pojo.QuestionAndAnswerBean">
 		
 		select * from tb_learner_qAndA where sortNum between #{start} and #{end} and language = #{language} order by  sortNum
 	
@@ -13,7 +13,7 @@
 	
 	<!-- 加载单个试题 -->
 	<select id="getQuestionAndAnswer" parameterType="string"
-		resultType="cn.osbullshit.learner.java.pojo.QuestionAndAnswerBean">
+		resultType="cn.osbullshit.learner.pojo.QuestionAndAnswerBean">
 		
 		select * from tb_learner_qAndA where id = #{id}
 	

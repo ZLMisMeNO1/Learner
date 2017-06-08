@@ -1,5 +1,7 @@
 package cn.osbullshit.learner.controller;
 
+import java.sql.Timestamp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.osbullshit.learner.dto.ResultMap;
+import cn.osbullshit.learner.pojo.AddQuestionAnswer;
 import cn.osbullshit.learner.service.QuestionAndAnswerService;
 
 @Controller
@@ -77,5 +80,14 @@ public class QuestionAndAnswerController {
 		}
 		
 		return result;
+	}
+	
+	public AddQuestionAnswer addQuestionAnswer(String id, String userId, String title,
+			String question, String answer, String language,
+			Timestamp update_time, Boolean canOk, Integer agree,
+			Integer disagree) {
+		
+		return null;
+		
 	}
 }

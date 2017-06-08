@@ -36,4 +36,19 @@ insert into tb_learner_qAndA(id,title,question,answer,isDelete,language,sortNum)
 
 ps：线程安全会带来额外的系统开销，所以StringBuilder的效率比StringBuffer高。如果对系统中的线程是否安全很掌握，可用StringBuffer，在线程不安全处加上关键字Synchronize。",0,"java",3);
 insert into tb_learner_qAndA(id,title,question,answer,isDelete,language,sortNum)
-	values ("cd56d2bd-96cf-4f0e-a3e3-7551c374945e","什么是认知？","认知是什么?","认知是一个过程",0,"java",2)
+	values ("cd56d2bd-96cf-4f0e-a3e3-7551c374945e","什么是认知？","认知是什么?","认知是一个过程",0,"java",2);
+	
+/* 新增试题中间表 */
+create table tb_learner_addQuestionAnswer(
+	id varchar(255) primary key,
+	userId varchar(255) ,
+	title varchar(255) not null,
+	question varchar(255) not null,
+	answer varchar(300) not null,
+	update_time TIMESTAMP ,
+	language varchar(30) not null,
+	canOk boolean ,
+	agree int  default 0,
+	disagree int  default 0
+);
+drop table tb_learner_addQuestionAnswer;
