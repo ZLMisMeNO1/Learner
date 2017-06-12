@@ -28,16 +28,18 @@ create table tb_learner_qAndA (
 drop table tb_learner_qAndA;
 select * from  tb_learner_qAndA;
 insert into tb_learner_qAndA(id,title,question,answer,isDelete,language,sortNum)
-	values ("607c4409-8936-4f81-bf83-45abda0f33ff","String,StringBuffer, StringBuilder 的区别是什么","String,StringBuffer, StringBuilder 的区别是什么？String为什么是不可变的？","1、String是字符串常量，StringBuffer和StringBuilder都是字符串变量。后两者的字符内容可变，而前者创建后内容不可变。
+	values ("607c4409-8936-4f81-bf83-45abda0f33f1","String,StringBuffer, StringBuilder 的区别是什么","String,StringBuffer, StringBuilder 的区别是什么？String为什么是不可变的？","1、String是字符串常量，StringBuffer和StringBuilder都是字符串变量。后两者的字符内容可变，而前者创建后内容不可变。
 
 2、String不可变是因为在JDK中String类被声明为一个final类。
 
 3、StringBuffer是线程安全的，而StringBuilder是非线程安全的。
 
-ps：线程安全会带来额外的系统开销，所以StringBuilder的效率比StringBuffer高。如果对系统中的线程是否安全很掌握，可用StringBuffer，在线程不安全处加上关键字Synchronize。",0,"java",3);
+ps：线程安全会带来额外的系统开销，所以StringBuilder的效率比StringBuffer高。如果对系统中的线程是否安全很掌握，可用StringBuffer，在线程不安全处加上关键字Synchronize。",0,"java",1);
 insert into tb_learner_qAndA(id,title,question,answer,isDelete,language,sortNum)
 	values ("cd56d2bd-96cf-4f0e-a3e3-7551c374945e","什么是认知？","认知是什么?","认知是一个过程",0,"java",2);
-	
+
+
+
 /* 新增试题中间表 */
 create table tb_learner_addQuestionAnswer(
 	id varchar(255) primary key,
