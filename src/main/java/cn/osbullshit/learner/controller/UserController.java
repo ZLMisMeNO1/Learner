@@ -29,7 +29,7 @@ import cn.osbullshit.learner.service.UserService;
  * @see       
  */
 @Controller
-@RequestMapping("java/user")
+@RequestMapping("common/user")
 public class UserController {
 	
 	private static Logger log = Logger.getLogger(UserController.class);

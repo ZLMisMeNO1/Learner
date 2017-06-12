@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Digital';
+    src: url('digital-dreamfat-webfont.woff2') format('woff2'),
+    url('digital-dreamfat-webfont.woff') format('woff');
+    src: url('DIGITAL-Regular.ttf');
+    font-weight: 700
+}

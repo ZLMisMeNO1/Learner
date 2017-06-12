@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.osbullshit.learner.dto.PageResult;
 import cn.osbullshit.learner.dto.ResultMap;
 import cn.osbullshit.learner.pojo.AddQuestionAnswer;
+import cn.osbullshit.learner.pojo.QuestionAndAnswerBean;
 import cn.osbullshit.learner.service.QuestionAndAnswerService;
 
 @Controller
-@RequestMapping("java/q&a")
+@RequestMapping("q&a")
 public class QuestionAndAnswerController {
 
 	@Autowired
@@ -31,24 +33,11 @@ public class QuestionAndAnswerController {
 	 */
 	@RequestMapping("listJavaQandAByPage")
 	@ResponseBody
-	public ResultMap listJavaQandAByPage(@RequestParam(value = "rows",defaultValue = "1") int rows
-			,@RequestParam(value = "page",defaultValue = "1") int page,String language) {
+	public PageResult<QuestionAndAnswerBean> listJavaQandAByPage(@RequestParam(value = "rows",defaultValue = "1") int rows
+			,@RequestParam(value = "page",defaultValue = "1") int page
+			,@RequestParam(value = "language",defaultValue = "java")String language) {
 
-		ResultMap result = new ResultMap();
-		
-		if(null == language) {
-			result.setState(-1);
-			result.setMessage("未指定语言");
-			return result;
-		}
-		try {
-			result.setState(1);
-			result.setData(questionAndAnswerService.listQuestionAndAnswers(page,rows,language));
-		} catch (Exception e) {
-			result.setState(-1);
-			result.setMessage(e.getMessage());
-		}
-		return result;
+		return questionAndAnswerService.listQuestionAndAnswers(page,rows,language);
 	}
 	
 	/**

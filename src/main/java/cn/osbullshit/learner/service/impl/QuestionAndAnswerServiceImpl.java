@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.osbullshit.learner.dao.QuestionAndAnswerDao;
+import cn.osbullshit.learner.dto.PageResult;
 import cn.osbullshit.learner.pojo.QuestionAndAnswerBean;
 import cn.osbullshit.learner.service.QuestionAndAnswerService;
 
@@ -20,16 +21,22 @@ public class QuestionAndAnswerServiceImpl implements QuestionAndAnswerService{
 	QuestionAndAnswerDao questionAndAnswerDao;
 	
 	@Override
-	public List<QuestionAndAnswerBean> listQuestionAndAnswers(int page, int rows,String language) {
+	public PageResult<QuestionAndAnswerBean> listQuestionAndAnswers(int page, int rows,String language) {
+		
+		PageResult<QuestionAndAnswerBean> pageResult = new PageResult<QuestionAndAnswerBean>();
+		
 		int start = (page-1) * rows + 1;
 		int end = page * rows;
+		pageResult.setPageNumber(page);
+		pageResult.setPageSize(rows);
 		
 		Map<String,Object> params = new HashMap<String,Object>();
 		
 		params.put("start", start);
 		params.put("end", end);
 		params.put("language", language);
-		return questionAndAnswerDao.listQuestionAndAnswers(params);
+		pageResult.setRows(questionAndAnswerDao.listQuestionAndAnswers(params));
+		return pageResult;
 	}
 
 	@Override

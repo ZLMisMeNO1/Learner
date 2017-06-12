@@ -1,0 +1,11 @@
+body .layui-layer-myStyle .layui-layer-title{
+  color: #fff;
+  background: #273749;
+  border-bottom-color: #273749;
+}
+.layui-layer-setwin .layui-layer-min cite{
+  background-color: #ccc;
+}
+.layui-layer-ico{
+  filter: brightness(200);
+}
