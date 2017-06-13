@@ -33,11 +33,13 @@ public class QuestionAndAnswerController {
 	 */
 	@RequestMapping("listJavaQandAByPage")
 	@ResponseBody
-	public PageResult<QuestionAndAnswerBean> listJavaQandAByPage(@RequestParam(value = "rows",defaultValue = "1") int rows
+	public String listJavaQandAByPage(@RequestParam(value = "rows",defaultValue = "1") int rows
 			,@RequestParam(value = "page",defaultValue = "1") int page
-			,@RequestParam(value = "language",defaultValue = "java")String language) {
+			,@RequestParam(value = "language",defaultValue = "java")String language,String callback) {
 
-		return questionAndAnswerService.listQuestionAndAnswers(page,rows,language);
+		ResultMap result = new ResultMap();
+		result.setData(questionAndAnswerService.listQuestionAndAnswers(page,rows,language));
+		return result.toJSONPResponse(callback);
 	}
 	
 	/**

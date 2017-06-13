@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,9 +11,6 @@
 		href="plugins/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-	hello world!<br>
-	你好，世界！
-	
 	<table style="height: 291px;" id="factoryAndPressureStation"></table>
 </body>
 <script type="text/javascript" src="plugins/jquery/jquery-1.10.1.js"></script>

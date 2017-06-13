@@ -1,6 +1,23 @@
 $(function(){
-	initFactoryAndPressureStation();
+//	initFactoryAndPressureStation();
+	
+	initf();
 })
+function initf(){
+	$.ajax({
+		url:'http://10.10.28.232:8998/learner/action/q&a/listJavaQandAByPage',
+		contentType: "application/json; charset=utf-8",
+		dataType : 'jsonp',
+		type : 'get',
+		success : function(result) {
+			console.log(result);
+			document.write(result.data.rows[0].question);
+		},
+		error : function(e){
+			console.log(e)
+		}
+	});
+}
 function initFactoryAndPressureStation(){
 	/* 初始化datagrid */
 	var optionSet = {
@@ -35,7 +52,7 @@ var settings2 = {
 			align : 'center'
 		}, {
 			field : 'question',
-			title : 'wneti',
+			title : '问题',
 			width : 100,
 			align : 'center'
 		}, {
