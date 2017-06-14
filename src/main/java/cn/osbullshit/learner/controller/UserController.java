@@ -39,7 +39,7 @@ public class UserController {
 	
 	@RequestMapping("list")
 	@ResponseBody
-	public String listUsers(String id,String name,String openId,String callback) throws Exception {
+	public ResultMap listUsers(String id,String name,String openId) throws Exception {
 		
 		if(null == id ) {
 			throw new IllegalParamsException();
@@ -55,8 +55,7 @@ public class UserController {
 			result.setState(-1);
 			result.setMessage(e.getMessage());
 		}
-		System.out.println(result.toJSONPResponse(callback));
-		return result.toJSONPResponse(callback);
+		return result;
 	}
 	
 }

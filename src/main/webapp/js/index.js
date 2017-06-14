@@ -7,11 +7,11 @@ function initf(){
 	$.ajax({
 		url:'http://10.10.28.232:8998/learner/action/q&a/listJavaQandAByPage',
 		contentType: "application/json; charset=utf-8",
-		dataType : 'jsonp',
+		dataType : 'json',
 		type : 'get',
 		success : function(result) {
 			console.log(result);
-			document.write(result.data.rows[0].question);
+			document.write(result);
 		},
 		error : function(e){
 			console.log(e)
