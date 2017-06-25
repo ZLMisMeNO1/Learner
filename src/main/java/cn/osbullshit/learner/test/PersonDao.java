@@ -1,5 +1,8 @@
 package cn.osbullshit.learner.test;
 
-public interface PersonDao  extends MongoBase<Person>{
+import cn.learner.util.mongodb.MongoBaseDao;
+
+
+public interface PersonDao  extends MongoBaseDao<Person>{
 
 }

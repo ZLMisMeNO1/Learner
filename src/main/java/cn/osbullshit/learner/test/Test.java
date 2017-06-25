@@ -26,10 +26,11 @@ public class Test {
 	}
 
 	@org.junit.Test
-	public void testAdd() {
+	public void testAdd() throws Exception {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("name", "tom");
-		Person p = userDaoImpl.findOne(params, collectionName);
-		System.out.println("user.count()==" + p.getName());
+		params.put("age",1);
+		Person p = userDaoImpl.findOne(params);
+		System.out.println(p.getAge());
 	}
 }

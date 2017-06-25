@@ -10,22 +10,24 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
+import com.mongodb.WriteResult;
+
 @Repository("userDaoImpl")  
-public class UserDaoImpl implements PersonDao{
+public class PersonDaoImpl implements PersonDao{
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
 	@Override
-	public void insert(Person object, String collectionName) {
-		mongoTemplate.insert(object, collectionName);
+	public void insert(Person object) {
+		mongoTemplate.insert(object);
 	}
 
 	@Override
-	public Person findOne(Map<String, Object> params, String collectionName) {
+	public Person findOne(Map<String, Object> params) {
 		return mongoTemplate.findOne(
 				new Query(Criteria.where("name").is(params.get("name"))),
-				Person.class, collectionName);
+				Person.class);
 	}
 
 	@Override
@@ -37,15 +39,15 @@ public class UserDaoImpl implements PersonDao{
 
 	@Override
 	public void update(Map<String, Object> params, String collectionName) {
-		mongoTemplate.upsert(new Query(Criteria.where("id")
-				.is(params.get("id"))), new Update().set("name",
+		 mongoTemplate.upsert(new Query(Criteria.where("age")
+				.is(params.get("age"))), new Update().set("name",
 				params.get("name")), Person.class, collectionName);
 	}
 
-	@Override
-	public void createCollection(String name) {
-		mongoTemplate.createCollection(name);
-	}
+//	@Override
+//	public void createCollection(String name) {
+//		mongoTemplate.createCollection(name);
+//	}
 
 	@Override
 	public void remove(Map<String, Object> params, String collectionName) {

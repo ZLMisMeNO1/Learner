@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection="person")
 public class Person implements Serializable{
 
 	/**   
