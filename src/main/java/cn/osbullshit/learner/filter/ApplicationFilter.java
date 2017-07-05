@@ -37,12 +37,9 @@ public class ApplicationFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain filterChain) throws IOException, ServletException {
-//		Map<String, Object[]> map = request.getParameterMap();
-//		System.out.println(map);
-//		for(String key : map.keySet()) {
-//			System.out.println("key:"+key+" values:"+Arrays.toString(map.get(key)));
-//		}
 		request.setCharacterEncoding("utf-8");
+		
+		response.setContentType("text/html;charset=UTF-8");
 		String coding = response.getCharacterEncoding();
 		System.out.println("coding:"+coding);
 		filterChain.doFilter(request, response);
