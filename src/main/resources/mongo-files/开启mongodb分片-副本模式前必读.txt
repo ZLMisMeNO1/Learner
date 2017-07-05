@@ -1,0 +1,21 @@
+使用以下端口
+配置服务器A:3536
+配置服务器B:3537
+分片服务器1：3434
+分片服务器2：3435
+路由服务器：1010
+
+1.D盘创建 learnerMongodb 文件夹，
+  文件夹下分别创建 ：ConfigServerA、ConfigServerB、DbServerA、DbServerB四个文件夹
+  
+# 配置服务器--副本配置
+2.执行config/ConfigServerA.bat 、config/ConfigServerB.bat
+3.执行config/config-shell.bat 运行config/config-server-conf.txt中脚本
+
+
+# 分片服务器开启
+1.分别运行dbs/db-server-d1-start.bat ,dbs/db-server-d2-start.bat
+
+#路由服务器开启以及设置
+1.运行route/route-server-start.bat
+2.运行route/route-shell.bat 并执行route/route-configs.txt 中的脚本

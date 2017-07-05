@@ -1,0 +1,11 @@
+
+添加分片A，分片B
+use admin
+sh.addShard("127.0.0.1:3434")
+sh.addShard("127.0.0.1:3435")
+
+数据库开启分片
+sh.enableSharding("learner")
+
+为person集合开启分片
+sh.shardCollection("learner.person",{_id:1},null,null)
