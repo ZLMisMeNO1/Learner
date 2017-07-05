@@ -22,7 +22,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import cn.osbullshit.learner.dto.WebConnectionDto;
+import cn.learner.util.socket.WebConnection;
+import cn.learner.util.socket.WebConnectionDto;
+
 
 /** 
  * ClassName:IndexController 首页
@@ -50,11 +52,8 @@ public class IndexController {
 	Integer a = 0;
 	@RequestMapping("send")
 	public void send(HttpServletResponse  response) throws IOException{
-		response.setHeader("Content-Type", "text/event-stream");
-		response.setHeader("Cache-Control", "no-cache");
-//		response.setContentType("charset=UTF-8");
 		String message = "请求了"+(a++)+"次";
-		System.out.println(message);
+
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("a", "a");
 		map.put("b", "b");
@@ -66,10 +65,7 @@ public class IndexController {
 		WebConnectionDto dto = new WebConnectionDto("myevent");
 		dto.addData("map",map);
 		dto.addData("string",message);
-        PrintWriter out = response.getWriter();
-        out.println(dto.toString());
-        out.flush();
-	    out.close();    
+        WebConnection.message(response, dto);
 	}
 }
  

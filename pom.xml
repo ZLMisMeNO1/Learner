@@ -261,7 +261,12 @@
 			<artifactId>mongo-java-driver</artifactId>
 			<version>3.4.2</version>
 		</dependency>
-
+		<!-- 添加本地工具包 -->
+		<dependency>
+			<groupId>cn.learner.util</groupId>
+			<artifactId>util</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 </project>
