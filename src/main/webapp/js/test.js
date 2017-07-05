@@ -6,7 +6,7 @@ $(function(){
 function initf(){
     if(window.EventSource){
 
-        var eventSource = new EventSource("http://localhost:8998/learner/action/java/send");
+        var eventSource = new EventSource("http://localhost:8998/learner/action/ad/message");
 
         //只要和服务器连接，就会触发open事件
         eventSource.addEventListener("open",function(){
@@ -25,12 +25,26 @@ function initf(){
 //            console.log(e);
 ////            console.log(JSON.parse(e.data))
 //        });
-
-        //发生错误，则会触发error事件
+        
         eventSource.addEventListener("myevent",function(e){
-            console.log("error服务器发送给客户端的数据为:" + e.data);
-//            console.log(e);
-            
+        	var data = JSON.parse(e.data);
+        	var url = 'action/ad/load?title='+data.title+'&context='+data.detail
+            layer.open({
+
+            	  title: false,
+            	  closeBtn: 1, //不显示关闭按钮
+            	  shade: [0],
+            	  area: ['320px', '215px'],
+            	  offset: 'rb', //右下角弹出
+            	  time: 2000, //2秒后自动关闭
+            	  anim: 2,
+            	  btn: [],
+            	  type: 2,
+            	  content: [url, 'no'], //iframe的url，no代表不显示滚动条
+//            	  content: '<p>'+e.data+'</p>', //iframe的url，no代表不显示滚动条
+            	  end: function(){ //此处用于演示
+            	  }
+            	});
         });
 
     }

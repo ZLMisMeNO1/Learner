@@ -44,28 +44,5 @@ public class IndexController {
 		return new ModelAndView("index");
 	}
 	
-	@RequestMapping("test")
-	public ModelAndView test() {
-		return new ModelAndView("test");
-	}
-	
-	Integer a = 0;
-	@RequestMapping("send")
-	public void send(HttpServletResponse  response) throws IOException{
-		String message = "请求了"+(a++)+"次";
-
-		Map<String,Object> map = new HashMap<String,Object>();
-		map.put("a", "a");
-		map.put("b", "b");
-		List<String> list = new ArrayList<String>();
-		list.add("a");
-		list.add("b");
-		list.add("v");
-		map.put("c",list);
-		WebConnectionDto dto = new WebConnectionDto("myevent");
-		dto.addData("map",map);
-		dto.addData("string",message);
-        WebConnection.message(response, dto);
-	}
 }
  

@@ -54,18 +54,6 @@ function toDate(str) {
 	return oDate1;
 }
 
-/**
- * 计算传入日期与num求和后得到新日期
- * 
- * @param num
- * @param date
- * @returns {Date}
- */
-function dateAdd(num, date) {
-	var v = date.valueOf();
-	v += num;
-	return new Date(v);
-}
 
 // 把时间转换成字符串
 function timeStamp2String(datetime, formate) {
@@ -85,43 +73,6 @@ function timeStamp2String(datetime, formate) {
 	return str;
 }
 
-/**
- * js获取当前时间
- * 
- * @returns {String}
- */
-function getCurentDate() {
-	var now = new Date();
-	return getDate(now);
-
-}
-
-function getDate(now) {
-	var year = now.getFullYear(); // 年
-	var month = now.getMonth() + 1; // 月
-	var day = now.getDate(); // 日
-
-	var clock = year + "-";
-
-	if (month < 10)
-		clock += "0";
-
-	clock += month + "-";
-
-	if (day < 10)
-		clock += "0";
-
-	clock += day;
-
-	return (clock);
-}
-
-function addDate(num) {
-	var now = new Date();
-	var v = now.valueOf();
-	v = v + num;
-	return getDate(new Date(v));
-}
 
 /**
  * 获取时间间隔
@@ -146,82 +97,6 @@ function getMillisecondByInv(unit, inv) {
 	return base * parseInt(inv);
 }
 
-var easyuiGrid = {
-	title : '',
-	nowrap : true,
-	border : true,
-	striped : true,
-	sortName : 'id',
-	sortOrder : 'desc',
-	remoteSort : true,
-	editable : false,
-	singleSelect : true,
-	idField : 'name',
-	loadMsg : '读取数据中',
-	frozenColumns : [[]],
-	fit : true,
-	columns : [[{
-		field : 'name',
-		title : '方法中文名',
-		width : 100
-	}, {
-		field : 'packageName',
-		title : '包名',
-		width : 250
-	}, {
-		field : 'methodName',
-		title : '方法名',
-		width : 150
-	}, {
-		field : 'returnName',
-		title : '返回名称',
-		width : 100
-	}, {
-		field : 'type',
-		title : '类型',
-		width : 100
-	}, {
-		field : 'remark',
-		title : '注释',
-		width : 100
-	}]],
-	pagination : false,
-	rownumbers : false,
-	pageList : [20, 40, 60, 80],
-	pageSize : 20
-};
-
-// 获取配置
-function getConfig(name) {
-	var value;
-	executeAjaxUrlForResult("action/configUniq/list", {
-		data : {
-			name : name
-		},
-		async : false
-	}, function(data) {
-		if (data.rows.length > 0) {
-			value = data.rows[0].value;
-		} else {
-			value = null;
-		}
-	});
-	return value;
-}
-
-function getConfigList(type) {
-	var tempdata;
-	// 初始化配置
-	executeAjaxUrlForResult("action/configlist/list", {
-		data : {
-			type : type
-		},
-		async : false
-	}, function(data) {
-		tempdata = data.data;
-	});
-	return tempdata;
-}
 
 /**
  * 获取当前月的第一天
