@@ -28,7 +28,9 @@ function initf(){
         
         eventSource.addEventListener("myevent",function(e){
         	var data = JSON.parse(e.data);
-        	var url = 'action/ad/load?title='+data.title+'&context='+data.detail
+        	var url = 'action/ad/load?title='+data['result']['rows'][0].title+'&context='+data['result']['rows'][0].context
+        				+ '&href='+data['result']['rows'][0].href + '&target='+data['result']['rows'][0].target ;
+        				layer.closeAll();
             layer.open({
 
             	  title: false,
@@ -36,7 +38,7 @@ function initf(){
             	  shade: [0],
             	  area: ['320px', '215px'],
             	  offset: 'rb', //右下角弹出
-            	  time: 2000, //2秒后自动关闭
+//            	  time: 2000, //2秒后自动关闭
             	  anim: 2,
             	  btn: [],
             	  type: 2,

@@ -26,7 +26,7 @@
 	<!-- 注册SqlSessionFactory -->
 	<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dbcp"/>
-		<property name="mapperLocations" value="classpath:cn/osbullshit/learner/dao/mapper/*.xml"/>
+		<property name="mapperLocations" value="classpath:cn/osbullshit/learner/dao/mysql/mapper/*.xml"/>
 	</bean>
 	
 	<!-- 将com.sjzu,note.dao包下接口生成实现类 -->

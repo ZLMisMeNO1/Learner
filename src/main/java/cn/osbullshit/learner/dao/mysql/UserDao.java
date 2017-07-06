@@ -6,7 +6,7 @@
  * 
  */  
   
-package cn.osbullshit.learner.dao;  
+package cn.osbullshit.learner.dao.mysql;  
 
 import java.util.List;
 

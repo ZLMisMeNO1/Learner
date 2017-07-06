@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
  <!-- 试题以及答案 -->
-<mapper namespace="cn.osbullshit.learner.dao.QuestionAndAnswerDao">
+<mapper namespace="cn.osbullshit.learner.dao.mysql.QuestionAndAnswerDao">
 	<!-- 分页加载试题 -->
 	<select id="listQuestionAndAnswers" parameterType="map"
 		resultType="cn.osbullshit.learner.pojo.QuestionAndAnswerBean">

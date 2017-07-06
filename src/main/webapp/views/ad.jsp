@@ -41,6 +41,6 @@
 <script src="plugins/waterutils.js"></script>
 <script type="text/javascript">
 		$("#title").html(GetQueryString("title"));
-		$("#context").html(GetQueryString("context"));
+		$("#context").html('<a href="'+GetQueryString("href")+'" target= "'+GetQueryString("target")+'" >'+GetQueryString("context") + '</a>');
 	</script>
 </html>

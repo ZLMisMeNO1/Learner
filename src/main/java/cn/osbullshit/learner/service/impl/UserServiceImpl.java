@@ -13,7 +13,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cn.osbullshit.learner.dao.UserDao;
+import cn.osbullshit.learner.dao.mysql.UserDao;
 import cn.osbullshit.learner.pojo.UserBean;
 import cn.osbullshit.learner.service.UserService;
 

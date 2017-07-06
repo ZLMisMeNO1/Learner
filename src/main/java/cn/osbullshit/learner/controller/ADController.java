@@ -9,11 +9,19 @@
 package cn.osbullshit.learner.controller;  
 
 import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import cn.learner.util.empty.InputCheck;
+import cn.learner.util.globalDto.ResultMap;
 import cn.learner.util.socket.WebConnection;
 import cn.learner.util.socket.WebConnectionDto;
+import cn.osbullshit.learner.service.AdvertService;
 
 /** 
  * ClassName:ADController 
@@ -28,25 +36,40 @@ import cn.learner.util.socket.WebConnectionDto;
 @Controller
 public class ADController {
 	
+	@Autowired
+	AdvertService advertService;
+	
 	@RequestMapping("index")
 	public ModelAndView index() {
 		return new ModelAndView("test");
 	}
 	
-	Integer a = 0;
 	@RequestMapping("message")
-	public void send(HttpServletResponse  response){
-		String title = "请求了"+(a++)+"次";
-		
+	public void adMsg(@RequestParam(value="page",defaultValue="1")int page
+			,@RequestParam(value="rows",defaultValue="15") int rows ,
+			HttpServletResponse  response) throws Exception{
 		WebConnectionDto dto = new WebConnectionDto("myevent",10000);
-		dto.addData("detail","这是一个广告");
-		dto.addData("title",title);
+		
+		dto.addData("result", advertService.listAds(page, rows));
         WebConnection.message(response, dto);
 	}
 	
 	@RequestMapping("load")
 	public ModelAndView ad(){
 		return new ModelAndView("ad");
+	}
+	
+	@RequestMapping("addAdvert")
+	@ResponseBody
+	public ResultMap addAdvert(String title,String context,String href ,String target) throws Exception {
+		ResultMap result = new ResultMap();
+		if(InputCheck.isEmpty(title)) {
+			result.setState(-1);
+		} else {
+			advertService.addAdvert(title, context, href, target);
+			result.setState(200);
+		}
+		return result;
 	}
 }
  
