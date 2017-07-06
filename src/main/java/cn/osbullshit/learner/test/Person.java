@@ -1,11 +1,13 @@
 package cn.osbullshit.learner.test;
 
-import java.io.Serializable;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import cn.learner.util.mongodb.BaseDocument;
+
+
 @Document(collection="person")
-public class Person implements Serializable{
+public class Person extends BaseDocument{
 
 	/**   
 	 * @Fields serialVersionUID :

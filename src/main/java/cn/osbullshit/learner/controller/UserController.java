@@ -15,7 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.osbullshit.learner.dto.ResultMap;
+import cn.learner.util.globalDto.ResultMap;
 import cn.osbullshit.learner.exception.IllegalParamsException;
 import cn.osbullshit.learner.service.UserService;
 

@@ -9,8 +9,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.learner.util.globalDto.PageResult;
 import cn.osbullshit.learner.dao.QuestionAndAnswerDao;
-import cn.osbullshit.learner.dto.PageResult;
 import cn.osbullshit.learner.pojo.QuestionAndAnswerBean;
 import cn.osbullshit.learner.service.QuestionAndAnswerService;
 

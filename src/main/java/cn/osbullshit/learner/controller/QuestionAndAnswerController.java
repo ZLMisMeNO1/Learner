@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.osbullshit.learner.dto.PageResult;
-import cn.osbullshit.learner.dto.ResultMap;
+import cn.learner.util.globalDto.PageResult;
+import cn.learner.util.globalDto.ResultMap;
 import cn.osbullshit.learner.pojo.AddQuestionAnswer;
 import cn.osbullshit.learner.pojo.QuestionAndAnswerBean;
 import cn.osbullshit.learner.service.QuestionAndAnswerService;

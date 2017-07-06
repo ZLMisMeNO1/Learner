@@ -3,7 +3,7 @@ package cn.osbullshit.learner.service;
 import java.sql.Timestamp;
 import java.util.List;
 
-import cn.osbullshit.learner.dto.PageResult;
+import cn.learner.util.globalDto.PageResult;
 import cn.osbullshit.learner.pojo.QuestionAndAnswerBean;
 
 public interface QuestionAndAnswerService {
