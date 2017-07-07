@@ -8,6 +8,9 @@
   
 package cn.osbullshit.learner.controller;  
 
+import java.net.URLDecoder;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +50,8 @@ public class ADController {
 	@RequestMapping("message")
 	public void adMsg(@RequestParam(value="page",defaultValue="1")int page
 			,@RequestParam(value="rows",defaultValue="15") int rows ,
-			HttpServletResponse  response) throws Exception{
+			HttpServletResponse  response
+			,HttpServletRequest request) throws Exception{
 		WebConnectionDto dto = new WebConnectionDto("myevent",10000);
 		
 		dto.addData("result", advertService.listAds(page, rows));
@@ -66,7 +70,8 @@ public class ADController {
 		if(InputCheck.isEmpty(title)) {
 			result.setState(-1);
 		} else {
-			advertService.addAdvert(title, context, href, target);
+			advertService.addAdvert( URLDecoder.decode(title,"utf-8"),  URLDecoder.decode(context,"utf-8"),
+					URLDecoder.decode(href,"utf-8"),  URLDecoder.decode(target,"utf-8"));
 			result.setState(200);
 		}
 		return result;
