@@ -16,7 +16,7 @@
 	<link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<style>
 		.chat {
-			height: 700px;
+/* 			height: 700px; */
 			border: 1px solid #ccc;
 			margin: 20px auto ;
 			padding:10px;
@@ -54,7 +54,7 @@
 			padding: 0 30px;
 		}
 		.list-group{
-			height: 630px;
+			height: 90%;
 			overflow:auto;
 
 			padding-left: 10px;

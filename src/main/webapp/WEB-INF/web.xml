@@ -6,7 +6,7 @@
 	
 	<display-name>Learner</display-name>
 	<welcome-file-list>
-		<welcome-file>/views/index.jsp</welcome-file>
+		<welcome-file>/views/chat/index.jsp</welcome-file>
 	</welcome-file-list>
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
