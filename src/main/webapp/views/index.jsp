@@ -17,7 +17,7 @@
 		href="plugins/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-	<table style="height: 291px;" id="factoryAndPressureStation"></table>
+	<jsp:forward page="action/chat/index"></jsp:forward>
 </body>
 <script type="text/javascript" src="plugins/jquery/jquery-1.10.1.js"></script>
 <script src="plugins/easyui/js/easyui.min.js"></script>
