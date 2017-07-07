@@ -22,7 +22,7 @@ function listMessage(time) {
 			var data = JSON.parse(e.data);
 			var sli = '';
 			$.each(data.newmessage,function(n,v){
-				sli += '<li><span class="msg">'+v.msg+'</span><span class="time">'+timeStamp2String(new Date(v.time),
+				sli += '<li><p class="msg">'+v.msg+'</p><span class="time">'+timeStamp2String(new Date(v.time),
 						"yyyy-MM-dd HH:mm:ss")+'</span></li>'
 				if(n == data.newmessage.length - 1){
 					flushMessage();
