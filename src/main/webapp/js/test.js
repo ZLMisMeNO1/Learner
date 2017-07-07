@@ -6,7 +6,7 @@ $(function(){
 function initf(){
     if(window.EventSource){
 
-        var eventSource = new EventSource("http://localhost:8998/learner/action/ad/message");
+        var eventSource = new EventSource("action/ad/message");
 
         //只要和服务器连接，就会触发open事件
         eventSource.addEventListener("open",function(){
