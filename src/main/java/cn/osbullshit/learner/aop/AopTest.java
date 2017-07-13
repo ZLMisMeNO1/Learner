@@ -16,9 +16,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class ControllerLog {
+public class AopTest {
 
-	private static final Logger log = Logger.getLogger(ControllerLog.class);
+	private static final Logger log = Logger.getLogger(AopTest.class);
 	
 	@Pointcut(value = "execution(* cn.osbullshit.learner.aop.AopTestController.getStr(java.lang.String)) && args(param)")
 	private void AopPointCut(String param){

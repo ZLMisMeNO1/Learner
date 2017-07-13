@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.learner.util.socket.WebConnection;
@@ -44,5 +45,12 @@ public class IndexController {
 		return new ModelAndView("index");
 	}
 	
+	@RequestMapping("abc")
+	@ResponseBody
+	public String abc() {
+		String a =null;
+		System.out.println(a.length());
+		return a;
+	}
 }
  

@@ -6,8 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
+import cn.osbullshit.learner.aop.AopTestService;
 /**
  * 
  * ClassName: ApplicationInterceptor  应用拦截器
@@ -20,13 +23,15 @@ public class ApplicationInterceptor implements HandlerInterceptor {
 	
 	private Logger logger = Logger.getLogger(ApplicationInterceptor.class);
 
+	@Autowired
+	AopTestService aopTestService;
 	
 	// 当request处理完成后被调用
 	@Override
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object arg2, Exception arg3)
 			throws Exception {
-		logger.info("afterCompletion");
+		logger.info("应用拦截器：afterCompletion");
 	}
 
 	/**
@@ -36,14 +41,16 @@ public class ApplicationInterceptor implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest request,
 			HttpServletResponse response, Object arg2, ModelAndView modelAndView)
 			throws Exception {
-		logger.info("postHandle");
+		logger.info("应用拦截器：postHandle");
 	}
 
 	// 在实际的handler被执行前被调用
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object arg2) throws Exception {
-		
+		logger.info("应用拦截器：preHandle");
+		logger.info("执行注入的service层代码");
+		aopTestService.getStr();
 		return true;
 	}
 
