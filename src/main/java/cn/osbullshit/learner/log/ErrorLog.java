@@ -35,6 +35,10 @@ import org.springframework.stereotype.Component;
 public class ErrorLog {
 
 	private static Logger log = Logger.getLogger(ErrorLog.class);
+	
+	//日志位置
+	private static String ERROR_LOG_LOCATION = null;
+	
 	//controller 错误日志位置
 	private static String CONTROLLER_ERROR_LOG_FILE_LOCATION = null;
 
@@ -49,6 +53,7 @@ public class ErrorLog {
 	public ErrorLog() {
 		Properties prop = null;
 		ClassLoader classLoader = null;
+		File errorFolder = null;
 		try {
 			classLoader = getClass().getClassLoader();
 			prop = new Properties();
@@ -56,6 +61,10 @@ public class ErrorLog {
 			CONTROLLER_ERROR_LOG_FILE_LOCATION = prop.getProperty("controllerErrorLogLocation","D:\\logs\\runtime\\controllerError.log");
 			SERVICE_ERROR_LOG_FILE_LOCATION = prop.getProperty("serviceErrorLogFileLocation","D:\\logs\\runtime\\serviceError.log");
 			DAO_ERROR_LOG_FILE_LOCATION = prop.getProperty("daoErrorLogFileLocation","D:\\logs\\runtime\\daoError.log");
+			ERROR_LOG_LOCATION = prop.getProperty("errorLogLocation","D:\\logs\\runtime\\");
+			errorFolder = new File(ERROR_LOG_LOCATION);
+			if(!errorFolder.exists())
+				errorFolder.mkdir();
 		} catch (Exception e) {
 			log.error("获取日志位置失败" + e);
 		} 

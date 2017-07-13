@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import cn.osbullshit.learner.aop.AopTestService;
 /**
  * 
  * ClassName: ApplicationInterceptor  应用拦截器
@@ -23,8 +22,6 @@ public class ApplicationInterceptor implements HandlerInterceptor {
 	
 	private Logger logger = Logger.getLogger(ApplicationInterceptor.class);
 
-	@Autowired
-	AopTestService aopTestService;
 	
 	// 当request处理完成后被调用
 	@Override
@@ -50,7 +47,6 @@ public class ApplicationInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, Object arg2) throws Exception {
 		logger.info("应用拦截器：preHandle");
 		logger.info("执行注入的service层代码");
-		aopTestService.getStr();
 		return true;
 	}
 
