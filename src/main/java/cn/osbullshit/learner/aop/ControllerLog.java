@@ -1,5 +1,8 @@
 package cn.osbullshit.learner.aop;
 
+import java.util.Arrays;
+
+import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -15,43 +18,52 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class ControllerLog {
 
-	@Pointcut("execution(* cn.osbullshit.learner.controller.IndexController.*(..))")
-	public void pointCut(){
-		
+	private static final Logger log = Logger.getLogger(ControllerLog.class);
+	
+	@Pointcut(value = "execution(* cn.osbullshit.learner.aop.AopTestController.getStr(java.lang.String)) && args(param)")
+	private void AopPointCut(String param){
+		log.info("切入点方法AopPointCut["+param+"]");
 	}
 	
-	@After("pointCut()")
-	public void after(JoinPoint joinPoint) {
-		System.out.println("after aspect executed");
+	@After(value="AopPointCut(name)")
+	public void after(JoinPoint joinPoint,String name) {
+		log.info("after AopPointCut :"+"["+name+"]");
+		name += "hello wowowow";
 	}
 
-	@Before("pointCut()")
-	public void before(JoinPoint joinPoint) {
+	@Before(value="AopPointCut(name)")
+	public void before(JoinPoint joinPoint,String name) {
+		log.info("before :["+name+"]");
 		//如果需要这里可以取出参数进行处理
-		//Object[] args = joinPoint.getArgs();
-		System.out.println("before aspect executing");
+		Object[] args = joinPoint.getArgs();
+		log.info("通过方法取参："+Arrays.toString(args));
 	}
-
-	@AfterReturning(pointcut = "pointCut()", returning = "returnVal")
-	public void afterReturning(JoinPoint joinPoint, Object returnVal) {
-		System.out.println("afterReturning executed, return result is "
-				+ returnVal);
+//
+	@AfterReturning(pointcut = "AopPointCut(name)", returning = "returnVal")
+	public String  afterReturning(JoinPoint joinPoint, Object returnVal,String name) {
+		log.info("afterReturning executed, return result is "
+				+ returnVal );
+		return name;
 	}
-
-	@Around("pointCut()")
-	public void around(ProceedingJoinPoint pjp) throws Throwable {
-		System.out.println("around start..");
+//
+	@Around(value="AopPointCut(name)")
+	public void around(ProceedingJoinPoint pjp,String name) throws Throwable {
+		log.info("环绕开始");
 		try {
-			pjp.proceed();
+			String[] args = new String[]{name};
+			Object obj = pjp.proceed(args);
+			log.info("环绕执行结果:"+obj);
 		} catch (Throwable ex) {
 			System.out.println("error in around");
 			throw ex;
 		}
-		System.out.println("around end");
+		log.info("环绕结束");
 	}
-
-	@AfterThrowing(pointcut = "pointCut()", throwing = "error")
-	public void afterThrowing(JoinPoint jp, Throwable error) {
-		System.out.println("error:" + error);
+//
+	@AfterThrowing(pointcut = "AopPointCut(name)", throwing = "error")
+	public void afterThrowing(JoinPoint jp, Throwable error,String name) {
+		log.info("发生错误:"+error);
+		log.info("错误信息：" + error.getMessage());
+		log.info("错误信息：" + error.getLocalizedMessage());
 	}
 }

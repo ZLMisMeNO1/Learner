@@ -279,12 +279,21 @@
 			<artifactId>mongo-java-driver</artifactId>
 			<version>3.4.2</version>
 		</dependency>
-		<!-- 添加本地工具包 --> 
+		<!-- 添加本地工具包 -->
 		<dependency>
 			<groupId>cn.learner.util</groupId>
 			<artifactId>util</artifactId>
 			<version>1.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.7.3</version>
+		</dependency>
 	</dependencies>
 </project>
