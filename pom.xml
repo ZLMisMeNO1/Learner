@@ -285,6 +285,7 @@
 			<artifactId>util</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<!-- 添加切片基础jar包 start -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
@@ -295,5 +296,13 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>1.7.3</version>
 		</dependency>
+
+		<!-- 添加dom4j -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
 	</dependencies>
 </project>

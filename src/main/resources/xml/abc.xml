@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cities >
+  <capital name="辽宁">
+    <municipality name="鞍山">
+      <city id="101070301">鞍山</city>
+      <city id="101070302">台安</city>
+      <city id="101070303">岫岩</city>
+      <city id="101070304">海城</city>
+    </municipality>
+  </capital>
+</cities>
+

@@ -8,24 +8,10 @@
   
 package cn.osbullshit.learner.controller;  
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import cn.learner.util.socket.WebConnection;
-import cn.learner.util.socket.WebConnectionDto;
-
 
 /** 
  * ClassName:IndexController 首页
@@ -47,10 +33,9 @@ public class IndexController {
 	
 	@RequestMapping("abc")
 	@ResponseBody
-	public String abc() {
+	public void abc() {
 		String a =null;
 		System.out.println(a.length());
-		return a;
 	}
 }
  
